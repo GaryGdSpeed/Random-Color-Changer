@@ -1,24 +1,21 @@
-import logo from './logo.svg';
+
 import './App.css';
 
 function App() {
+
+  const changeColor = () => {
+    let R = Math.random() * 256;
+    let G = Math.random() * 256;
+    let B = Math.random() * 256;
+    document.getElementById("main-app").style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main id="main-app">
+      <div id="button-container">
+        <button id="button" onClick={changeColor}>Change Color</button>
+      </div>
+    </main>
   );
 }
 
